@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProperty name="logLevel" source="bot.log.level" defaultValue="error"/>
+    <property name="outPattern"
+              value="[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%X{traceNo}] %logger{5} %M %L %msg%n"/>
+
+    <!-- 控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${outPattern}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="${logLevel}">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+
+</configuration>

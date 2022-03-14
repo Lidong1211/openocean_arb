@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.1.4.RELEASE</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.openocean.arb</groupId>
+    <artifactId>openocean_arb</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+
+
+    <modules>
+        <module>openocean_common</module>
+        <module>openocean_bot</module>
+    </modules>
+
+    <properties>
+        <com.squareup.retrofit2.version>2.7.0</com.squareup.retrofit2.version>
+        <commons-collections4.version>4.3</commons-collections4.version>
+        <commons-codec.version>1.12</commons-codec.version>
+        <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
+        <fastjson.version>1.2.61</fastjson.version>
+        <okhttp.version>3.14.1</okhttp.version>
+        <hutool.version>4.4.5</hutool.version>
+        <feign.version>10.1.0</feign.version>
+        <binance.api.version>1.1.14</binance.api.version>
+        <huobi.api.version>2.0.6</huobi.api.version>
+        <kucoin.java.sdk.version>1.0.6.5</kucoin.java.sdk.version>
+        <okex.java.sdk.version>1.1.8</okex.java.sdk.version>
+        <binance.future.version>1.1.7</binance.future.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- openocean -->
+            <dependency>
+                <artifactId>openocean_common</artifactId>
+                <groupId>com.openocean.arb</groupId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <artifactId>fastjson</artifactId>
+                <groupId>com.alibaba</groupId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>lombok</artifactId>
+                <groupId>org.projectlombok</groupId>
+                <scope>compile</scope>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>hutool-all</artifactId>
+                <groupId>cn.hutool</groupId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>commons-lang3</artifactId>
+                <groupId>org.apache.commons</groupId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>commons-collections4</artifactId>
+                <groupId>org.apache.commons</groupId>
+                <version>${commons-collections4.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>commons-codec</artifactId>
+                <groupId>commons-codec</groupId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-jackson</artifactId>
+                <version>${feign.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-okhttp</artifactId>
+                <version>${feign.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-slf4j</artifactId>
+                <version>${feign.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>retrofit</artifactId>
+                <version>${com.squareup.retrofit2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>converter-jackson</artifactId>
+                <version>${com.squareup.retrofit2.version}</version>
+            </dependency>
+            <dependency>
+                <artifactId>okhttp</artifactId>
+                <groupId>com.squareup.okhttp3</groupId>
+                <version>${okhttp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
+            </dependency>
+
+
+            <!-- exchange api -->
+            <dependency>
+                <groupId>com.binance.api</groupId>
+                <artifactId>binance-api-client</artifactId>
+                <version>${binance.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.huobi.sdk</groupId>
+                <artifactId>huobi-client</artifactId>
+                <version>${huobi.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kucoin</groupId>
+                <artifactId>kucoin-java-sdk</artifactId>
+                <version>${kucoin.java.sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.okcoin.commons</groupId>
+                <artifactId>okex-java-sdk-api</artifactId>
+                <version>${okex.java.sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.binance.sdk</groupId>
+                <artifactId>binance-client</artifactId>
+                <version>${binance.future.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.google.cloud.tools</groupId>
+                    <artifactId>jib-maven-plugin</artifactId>
+                    <version>1.4.0</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
