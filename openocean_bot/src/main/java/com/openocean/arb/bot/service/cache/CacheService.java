@@ -1,4 +1,4 @@
-package com.openocean.arb.bot.cache;
+package com.openocean.arb.bot.service.cache;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.thread.ThreadUtil;
@@ -115,7 +115,6 @@ public class CacheService {
             return remotePrices.parallelStream()
                     .collect(Collectors.toMap(RemotePrice::getSymbol, RemotePrice::getPrice, (key1, key2) -> key2));
         }
-
     }
 
     /**

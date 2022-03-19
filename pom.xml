@@ -141,6 +141,35 @@
     </dependencyManagement>
 
 
+    <repositories>
+        <repository>
+            <id>ngdes</id>
+            <name>Nexus Repository</name>
+            <url>http://maven.ontrade.site/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>release</id>
+            <name>Nexus Releases Repository</name>
+            <url>http://maven.ontrade.site/repository/maven-releases</url>
+            <releases>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <name>Nexus Snapshots Repository</name>
+            <url>http://maven.ontrade.site/repository/maven-snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -149,7 +178,6 @@
                     <groupId>org.springframework.boot</groupId>
                     <version>${spring-boot.version}</version>
                 </plugin>
-
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -158,12 +186,6 @@
                         <target>1.8</target>
                     </configuration>
                 </plugin>
-                <plugin>
-                    <groupId>com.google.cloud.tools</groupId>
-                    <artifactId>jib-maven-plugin</artifactId>
-                    <version>1.4.0</version>
-                </plugin>
-
             </plugins>
         </pluginManagement>
     </build>

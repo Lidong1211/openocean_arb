@@ -4,11 +4,11 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.StrUtil;
-import com.openocean.arb.bot.cache.CacheService;
 import com.openocean.arb.bot.config.remote.openocean.OpenOceanV2Api;
 import com.openocean.arb.bot.model.*;
 import com.openocean.arb.bot.model.remote.*;
 import com.openocean.arb.bot.model.remote.openocean.*;
+import com.openocean.arb.bot.service.cache.CacheService;
 import com.openocean.arb.bot.service.remote.RemoteOrderService;
 import com.openocean.arb.common.constants.*;
 import com.openocean.arb.common.exception.BizException;
@@ -397,7 +397,7 @@ public class StrategyTask {
             tokenDecimalsMap.put(token.getSymbol(), token.getDecimals());
         }
         OOV2BalanceReq request = OOV2BalanceReq.builder()
-                .inTokenAddress(StrUtil.join(CommonConstants.FIELD_COMMA_STR, tokenAddressList))
+                .inTokenAddress(StrUtil.join(CommonConst.COMMA_STR, tokenAddressList))
                 .chainId(ChainConst.chainIdMap.get(dexChainCode))
                 .account(dexAddress)
                 .build();

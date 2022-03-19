@@ -35,7 +35,7 @@ public class OpenOceanRemoteConfig extends BaseRemoteConfig {
                 .encoder(new JacksonEncoder())
                 .decoder(new JacksonDecoder())
                 .client(new OkHttpClient())
-                .retryer(new Retryer.Default(100L, 1000L, 3))
+                .retryer(new Retryer.Default(100L, 1000L, 1))
                 .logger(new Slf4jLogger())
                 .logLevel(Logger.Level.FULL)
                 .queryMapEncoder(new BeanQueryMapEncoder())

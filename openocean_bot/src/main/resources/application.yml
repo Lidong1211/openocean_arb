@@ -1,50 +1,23 @@
 server:
   port: 8081
-  servlet:
-    context-path: /api
-  tomcat:
-    uri-encoding: UTF-8
-    max-threads: 500
-    max-connections: 2000
-spring:
-  jackson:
-    time-zone: GMT+8
-    date-format: yyyy-MM-dd HH:mm:ss
-    serialization:
-      write-dates-as-timestamps: true
+
 bot:
-  env: test
   log:
     level: info
   excute:
     interval: 2
 
 network:
+  # 代理配置
   proxy:
     enabled: true
     host: 10.17.145.201
     port: 1080
+  # 接口配置
   remote:
     openocean:
       apiV2Url: https://openapi-test.openocean.finance
 
-# 策略参数配置
-input:
-  param:
-    # 是否模拟 0-否 1-是
-    sampling: 0
-    triggerValue: 1
-    perOrderAmount: 20
-    # dex
-    address: ''
-    privateKey: ''
-    dexChainCode: bsc
-    dexPairCode: SXP/USDT
-    dexSlippage: 0.005
-    # cex
-    apiKey: ''
-    apiSecret: ''
-    exchangeCode: binance
-    cexPairCode: SXP/USDT
+
 
 

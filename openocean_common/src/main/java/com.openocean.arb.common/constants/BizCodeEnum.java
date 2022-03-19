@@ -31,6 +31,7 @@ public enum BizCodeEnum {
     /**
      * SAAS异常
      */
+    BIZ_ERROR_STRATEGY_IS_NOT_RUNNING(31000, "Strategy is not running"),
     BIZ_ERROR_STRATEGY_IS_RUNNING(31001, "Strategy is running"),
     BIZ_ERROR_EXCHANGE_IS_NOT_SUPPORTED(31002, "CeFi exchange is not supported"),
     BIZ_ERROR_APPROVE_TOKEN_ERROR(31003, "DeFi approve token error"),
@@ -39,6 +40,9 @@ public enum BizCodeEnum {
     BIZ_ERROR_QUOTE_RESULT_NULL(31006, "DeFi quote result is null"),
     BIZ_ERROR_TX_RESULT_NULL(31007, "DeFi tx result is null"),
     BIZ_ERROR_GET_CEX_RESULT_TIMEOUT(31008, "Get ceFi order result timeout"),
+    BIZ_ERROR_THERE_IS_NO_EXISTING_STRATEGY(31009, "There is no existing strategy"),
+    BIZ_ERROR_NOT_FIND_THE_CEX_CONNECT_CONFIG(31010, "Not find the ceFi(%s) connect config"),
+    BIZ_ERROR_NOT_FIND_THE_DEX_CONNECT_CONFIG(31011, "Not find the deFi(%s) connect config"),
 
     /**
      * API调用异常

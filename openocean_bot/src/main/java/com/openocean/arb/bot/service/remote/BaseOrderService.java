@@ -24,7 +24,7 @@ public abstract class BaseOrderService {
     protected static final Object KEY = new Object();
 
     // 订单薄，KEY：交易对（格式与交易所相关）
-    protected Cache<String, RemoteOrderBook> orderBooks = Caffeine.newBuilder().expireAfterWrite(Duration.ofSeconds(5)).build();
+    protected Cache<String, RemoteOrderBook> orderBooks = Caffeine.newBuilder().expireAfterWrite(Duration.ofSeconds(30)).build();
 
     // 订阅订单薄的交易对，KEY：交易对（格式与交易所相关）
     protected Set<String> subscribeSymbols = new HashSet<>();

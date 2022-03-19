@@ -1,5 +1,6 @@
 package com.openocean.arb.bot;
 
+import com.openocean.arb.common.util.BotUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +20,7 @@ public class Application {
 
     public static void main(String[] args) {
         System.setProperty("https.protocols", "TLSv1,TLSv1.1,TLSv1.2");
-        SpringApplication.run(Application.class, args);
+        BotUtil.applicationContext = SpringApplication.run(Application.class, args);
     }
 
 }

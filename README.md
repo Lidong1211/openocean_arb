@@ -1,4 +1,4 @@
-# OpenOcean Arbitrage Bot Application
+# OpenOcean Arbitrage Bot
 
 
 

@@ -3,11 +3,24 @@ package com.openocean.arb.common.util;
 import com.openocean.arb.common.constants.BizCodeEnum;
 import com.openocean.arb.common.exception.BizException;
 import lombok.experimental.UtilityClass;
+import org.springframework.boot.ExitCodeGenerator;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.ApplicationContext;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
 @UtilityClass
 public class BotUtil {
+
+    public static ApplicationContext applicationContext;
+
+    /**
+     * 退出系统
+     */
+    public static void exit() {
+        int exitCode = SpringApplication.exit(BotUtil.applicationContext, (ExitCodeGenerator) () -> 0);
+        System.exit(exitCode);
+    }
 
     /**
      * 触发但未成功完成交易次数

@@ -1,6 +1,6 @@
 package com.openocean.arb.bot.model.remote;
 
-import com.openocean.arb.common.constants.CommonConstants;
+import com.openocean.arb.common.constants.CommonConst;
 import lombok.Builder;
 import lombok.Data;
 
@@ -25,8 +25,8 @@ public class RemoteSymbol {
 
     public static RemoteSymbol create() {
         return RemoteSymbol.builder()
-                .priceScale(CommonConstants.DEFAULT_SCALE)
-                .volumeScale(CommonConstants.DEFAULT_SCALE)
+                .priceScale(CommonConst.DEFAULT_SCALE)
+                .volumeScale(CommonConst.DEFAULT_SCALE)
                 .minVolume(BigDecimal.ONE)
                 .build();
     }

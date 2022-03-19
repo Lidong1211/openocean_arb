@@ -10,4 +10,9 @@ public interface StrategyService {
      * start
      */
     void startStrategy();
+
+    /**
+     * stop
+     */
+    void stopStrategy();
 }

@@ -10,6 +10,12 @@ import java.util.List;
  * @author lidong
  */
 public interface RemoteOrderService {
+
+    /**
+     * 是否可用
+     */
+    Boolean getEnabled();
+
     /**
      * 交易所代码
      */

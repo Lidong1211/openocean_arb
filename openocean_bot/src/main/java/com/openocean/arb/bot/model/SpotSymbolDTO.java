@@ -1,7 +1,7 @@
 package com.openocean.arb.bot.model;
 
 import com.openocean.arb.bot.model.remote.RemoteSymbol;
-import com.openocean.arb.common.constants.CommonConstants;
+import com.openocean.arb.common.constants.CommonConst;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 
@@ -26,8 +26,8 @@ public class SpotSymbolDTO {
     public static SpotSymbolDTO create(String symbol) {
         SpotSymbolDTO symbolDTO = new SpotSymbolDTO();
         symbolDTO.setSymbol(symbol);
-        symbolDTO.setPriceScale(CommonConstants.DEFAULT_SCALE);
-        symbolDTO.setVolumeScale(CommonConstants.DEFAULT_SCALE);
+        symbolDTO.setPriceScale(CommonConst.DEFAULT_SCALE);
+        symbolDTO.setVolumeScale(CommonConst.DEFAULT_SCALE);
         symbolDTO.setMinVolume(BigDecimal.ONE);
         return symbolDTO;
     }

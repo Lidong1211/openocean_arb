@@ -21,16 +21,16 @@ public class ChainConst {
         chainTypeMap.put("polygon", "Polygon");
         chainTypeMap.put("fantom", "Fantom");
         // chainIdMap
-        chainIdMap.put("eth", "1");
+//        chainIdMap.put("eth", "1");
         chainIdMap.put("bsc", "56");
         chainIdMap.put("polygon", "137");
-        chainIdMap.put("avax", "43114");
-        chainIdMap.put("okex", "66");
-        chainIdMap.put("xdai", "100");
-        chainIdMap.put("heco", "128");
-        chainIdMap.put("fantom", "250");
-        chainIdMap.put("avalanche", "43114");
-        chainIdMap.put("arbitrum", "42161");
+//        chainIdMap.put("okex", "66");
+//        chainIdMap.put("avax", "43114");
+//        chainIdMap.put("xdai", "100");
+//        chainIdMap.put("heco", "128");
+//        chainIdMap.put("fantom", "250");
+//        chainIdMap.put("avalanche", "43114");
+//        chainIdMap.put("arbitrum", "42161");
         // network
         networkMap.put("bsc", "BSC");
         networkMap.put("polygon", "MATIC");

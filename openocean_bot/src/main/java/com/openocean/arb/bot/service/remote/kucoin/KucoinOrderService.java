@@ -55,6 +55,8 @@ public class KucoinOrderService extends BaseOrderService implements RemoteOrderS
     private NetworkProxyConfig proxyConfig;
     @Getter
     private String exchangeCode = "kucoin";
+    @Getter
+    private Boolean enabled = false;
 
     @PostConstruct
     public void init() throws IOException {

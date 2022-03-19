@@ -25,8 +25,10 @@ import com.openocean.arb.bot.model.remote.*;
 import com.openocean.arb.bot.network.OKHttpClientFactory;
 import com.openocean.arb.bot.service.remote.BaseOrderService;
 import com.openocean.arb.bot.service.remote.RemoteOrderService;
-import com.openocean.arb.common.constants.*;
-import com.openocean.arb.common.exception.BizException;
+import com.openocean.arb.common.constants.DirectionEnum;
+import com.openocean.arb.common.constants.OrderStatusEnum;
+import com.openocean.arb.common.constants.OrderTypeEnum;
+import com.openocean.arb.common.constants.TimeConditionEnum;
 import com.openocean.arb.common.util.BigDecimalUtil;
 import com.openocean.arb.common.util.CoinUtil;
 import com.openocean.arb.common.util.JacksonUtil;
@@ -60,6 +62,8 @@ public class BinanceOrderService extends BaseOrderService implements RemoteOrder
     private OKHttpClientFactory okHttpClientFactory;
     @Getter
     private String exchangeCode = "binance";
+    @Getter
+    private Boolean enabled = true;
     // 深度
     private static final String depth = "10";
 
@@ -190,7 +194,6 @@ public class BinanceOrderService extends BaseOrderService implements RemoteOrder
         RemoteOrderBook orderBook = orderBooks.getIfPresent(symbol);
         if (orderBook == null) {
             log.error("binance取({})订单薄异常", pairCode);
-            throw new BizException(BizCodeEnum.BIZ_ERROR_SYMBOL_NO_MARKET);
         }
         return orderBook;
     }

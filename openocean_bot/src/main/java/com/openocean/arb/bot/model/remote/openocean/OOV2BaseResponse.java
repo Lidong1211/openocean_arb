@@ -33,7 +33,7 @@ public class OOV2BaseResponse<T> implements Serializable {
      * @return 匹配结果
      */
     public boolean isError() {
-        return !"200" .equals(code);
+        return !"200".equals(code);
     }
 
     /**
