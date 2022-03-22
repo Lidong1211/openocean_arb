@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+bot:
+  log:
+    level: info
+  excute:
+    interval: 2
+
+network:
+  remote:
+    openocean:
+      apiV2Url: https://openapi-test.openocean.finance
+
+
+
+
